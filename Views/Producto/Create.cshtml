@@ -1,0 +1,38 @@
+@model Prog1LabPC1.Models.Producto
+@{
+    ViewData["Title"] = "Tienda de Videos";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<div class="text-center">
+    <h1 class="display-4">Registro de Películas</h1>
+
+    <form asp-controller="Producto" asp-actiosn="Create">
+        <label asp-for="name" class="form-label"></label>
+        <input asp-for="name" class="form-control form-control-sm" type="text" placeholder="Escribe el nombre del producto" aria-label=".form-control-sm" />
+
+        <label asp-for="categoria" class="control-label"></label>
+        <select asp-for="categoria" class="form-control">
+            <option value="Adultos">Adultos</option>
+            <option value="Accion">Accion</option>
+            <option value="Comedia">Comedia</option>
+            <option value="Terror">Terror</option>           
+        </select>
+
+        <label asp-for="precio" class="control-label"></label>
+        <input asp-for="precio" class="form-control" />
+
+        <label asp-for="descuento" class="control-label"></label>
+        <input asp-for="descuento" class="form-control" />
+
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">Registrar</button> 
+        </div>              
+    </form>
+    <h1>@ViewData["Message"]</h1>
+
+</div>
+<div>
+     <a asp-action="Index">Back to List</a>
+</div>
